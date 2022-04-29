@@ -121,6 +121,101 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &237822371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 237822373}
+  - component: {fileID: 237822372}
+  m_Layer: 0
+  m_Name: SpanwerComputers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &237822372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237822371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5b21cfe1f6618a47906b13c60d89ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _computerTemplate: {fileID: 2259110726304493698, guid: 511aef038aba5fe499837b32b60b913d,
+    type: 3}
+  _planetContainer: {fileID: 909201911}
+  _shipContainer: {fileID: 699599077}
+  _playersContainer: {fileID: 1114317340}
+--- !u!4 &237822373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237822371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.1, y: 0.78, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &249396411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 249396412}
+  - component: {fileID: 249396413}
+  m_Layer: 0
+  m_Name: LevelLauncher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &249396412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249396411}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.031346917, y: -0.113372035, z: -1.8740234}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &249396413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249396411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4310d4f337f445e4d9dd5d3bfae96dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelData: {fileID: 11400000, guid: 3175dc352e15dd444b47c9bca6905013, type: 2}
+  _computerSpawner: {fileID: 237822372}
+  _planetSpawner: {fileID: 324254656}
+  _manPlayer: {fileID: 413442329}
 --- !u!1 &256672050
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +293,7 @@ GameObject:
   - component: {fileID: 324254657}
   - component: {fileID: 324254656}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: SpawnerPlanets
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -218,8 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _planetTemplate: {fileID: 420475742399445985, guid: 69a206ae1f5d2fb4cb9431195ceb85bb,
     type: 3}
-  _container: {fileID: 909201910}
-  _countPlanet: 10
+  _container: {fileID: 909201911}
 --- !u!4 &324254657
 Transform:
   m_ObjectHideFlags: 0
@@ -232,58 +326,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &343494280
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 343494281}
-  - component: {fileID: 343494282}
-  m_Layer: 0
-  m_Name: GreenComputer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &343494281
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343494280}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1114317339}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &343494282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343494280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 181cef64090730145a877e213135bc68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _color: {r: 0.19789205, g: 0.9254902, b: 0, a: 1}
-  _planetContainer: {fileID: 909201910}
-  _shipContainer: {fileID: 699599076}
-  _startShipCount: 50
-  _shipTemplate: {fileID: -454937887470486022, guid: c8f046b8919195b4b97598ded39fdf54,
-    type: 3}
-  _delayBetweemSelect: 1
 --- !u!1 &413442327
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +339,7 @@ GameObject:
   - component: {fileID: 413442328}
   - component: {fileID: 413442329}
   m_Layer: 0
-  m_Name: BlueMan
+  m_Name: ManPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,7 +357,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1114317339}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &413442329
 MonoBehaviour:
@@ -327,62 +371,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52017da83471a1843bff88f2c0c7e428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: {r: 0.013375282, g: 0, b: 1, a: 1}
-  _planetContainer: {fileID: 909201910}
-  _shipContainer: {fileID: 699599076}
   _startShipCount: 50
   _shipTemplate: {fileID: -454937887470486022, guid: c8f046b8919195b4b97598ded39fdf54,
     type: 3}
---- !u!1 &431430528
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 431430529}
-  - component: {fileID: 431430530}
-  m_Layer: 0
-  m_Name: OrangeComputer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &431430529
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431430528}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1114317339}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &431430530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431430528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 181cef64090730145a877e213135bc68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _color: {r: 0.9245283, g: 0.62935644, b: 0, a: 1}
-  _planetContainer: {fileID: 909201910}
-  _shipContainer: {fileID: 699599076}
-  _startShipCount: 50
-  _shipTemplate: {fileID: -454937887470486022, guid: c8f046b8919195b4b97598ded39fdf54,
-    type: 3}
-  _delayBetweemSelect: 1
+  _planetContainer: {fileID: 909201911}
+  _shipContainer: {fileID: 699599077}
+  _color: {r: 0, g: 0.17340183, b: 1, a: 1}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +469,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 699599076}
+  - component: {fileID: 699599077}
   m_Layer: 0
   m_Name: ShipContainer
   m_TagString: Untagged
@@ -496,6 +491,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &699599077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699599075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe196d00591a554885b0e95052ba5db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &909201909
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +512,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 909201910}
+  - component: {fileID: 909201911}
   m_Layer: 0
   m_Name: PlanetContainer
   m_TagString: Untagged
@@ -524,8 +532,20 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &909201911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909201909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d873a28b51cda42bd361071aea5a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1114317338
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,8 +555,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1114317339}
+  - component: {fileID: 1114317340}
   m_Layer: 0
-  m_Name: Players
+  m_Name: PlayersContainer
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -553,12 +574,22 @@ Transform:
   m_LocalPosition: {x: -0.1, y: 0.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 431430529}
   - {fileID: 413442328}
-  - {fileID: 343494281}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1114317340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114317338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 322ccbccbbe2cab4e8d42ce587da53f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1232298529
 GameObject:
   m_ObjectHideFlags: 0

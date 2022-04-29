@@ -2,32 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class PlanetSpawner : MonoBehaviour
 {
     [SerializeField] private Planet _planetTemplate;
-    [SerializeField] private Transform _container;
-    [SerializeField] private int _countPlanet;
+    [SerializeField] private PlanetContainer _container;
 
     private Vector2 _maxScreenSize;
     private Vector2 _minScreenSize;
     private List<Planet> _planets = new List<Planet>();
 
-    private void Awake()
+    public void Restart(int countPlanet)
     {
+        ResetContainer();
         _maxScreenSize = Camera.main.ViewportToWorldPoint(new Vector2(0.95f, 0.95f));
         _minScreenSize = Camera.main.ViewportToWorldPoint(new Vector2(0.05f, 0.05f));
 
         SpawnPlanet(GetRandomPosition());
 
-        for (int i = 1; i < _countPlanet; i++)
+        for (int i = 1; i < countPlanet; i++)
         {
             SpawnPlanet(GetFreePosition());
         }
     }
 
+    private void ResetContainer()
+    {
+        for (int i = 0; i < _planets.Count; i++)
+        {
+            Destroy(_planets[i].gameObject);
+        }
+
+        _planets.Clear();
+    }
+
     private void SpawnPlanet(Vector2 newPosition)
     {
-        Planet newPlanet = Instantiate(_planetTemplate, newPosition, Quaternion.identity, _container);
+        Planet newPlanet = Instantiate(_planetTemplate, newPosition, Quaternion.identity, _container.transform);
         _planets.Add(newPlanet);
     }
 

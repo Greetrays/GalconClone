@@ -4,11 +4,25 @@ using UnityEngine;
 
 public class Man : Player
 {
+    [SerializeField] private PlanetContainer _planetContainer;
+    [SerializeField] private ShipContainer _shipContainer;
+    [SerializeField] private Color _color;
+
     private PlanetShip _previousSelectPlanet;
+
+    private void Awake()
+    {
+        Color = _color;
+    }
 
     private void Update()
     {
         Select();
+    }
+
+    public void Restart()
+    {
+        RestartData(_planetContainer);
     }
 
     private void Select()
@@ -26,7 +40,7 @@ public class Man : Player
         {
             if (TrySelectPlanet(FreePlanets, ref TargetPlanet))
             {
-                SpawnShips();
+                SpawnShips(_shipContainer);
                 SelectPlanet.GetComponent<Planet>().SwitchSpritePlanet(false);
                 SelectPlanet = null;
                 TargetPlanet = null;

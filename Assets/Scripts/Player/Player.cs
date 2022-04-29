@@ -4,9 +4,6 @@ using System.Linq;
 
 public abstract class Player : MonoBehaviour
 {
-    [SerializeField] private Color _color;
-    [SerializeField] private Transform _planetContainer;
-    [SerializeField] private Transform _shipContainer;
     [SerializeField] private int _startShipCount;
     [SerializeField] private Ship _shipTemplate;
 
@@ -15,13 +12,7 @@ public abstract class Player : MonoBehaviour
     protected List<PlanetShip> OccupiedPlanets = new List<PlanetShip>();
     protected List<PlanetShip> FreePlanets = new List<PlanetShip>();
 
-    public Color Color => _color;
-
-    private void Start()
-    {
-        FillFreePlanets();
-        SetStartPlanet();
-    }
+    public Color Color { get; protected set; }
 
     public void AddOccupiedPlanet(PlanetShip planet)
     {
@@ -35,6 +26,13 @@ public abstract class Player : MonoBehaviour
         FreePlanets.Add(planet);
     }
 
+    public void RestartData(PlanetContainer planetContainer)
+    {
+        OccupiedPlanets.Clear();
+        FreePlanets.Clear();
+        FillFreePlanets(planetContainer);
+        SetStartPlanet();
+    }
 
     protected bool TrySelectPlanet(List<PlanetShip> planets, ref PlanetShip planetShip)
     {
@@ -62,13 +60,13 @@ public abstract class Player : MonoBehaviour
         return false;
     }
 
-    protected void SpawnShips()
+    protected void SpawnShips(ShipContainer shipContainer)
     {
         int countShips = SelectPlanet.GiveHalfShips();
 
         for (int i = 0; i < countShips; i++)
         {
-            Ship newShip = Instantiate(_shipTemplate, SelectPlanet.transform.position, Quaternion.identity, _shipContainer);
+            Ship newShip = Instantiate(_shipTemplate, SelectPlanet.transform.position, Quaternion.identity, shipContainer.transform);
             newShip.Init(TargetPlanet, this);
         }
     }
@@ -77,14 +75,14 @@ public abstract class Player : MonoBehaviour
     {
         PlanetShip startPlanet = FreePlanets.FirstOrDefault(planet => planet.HasOvner == false);
         AddOccupiedPlanet(startPlanet);
-        startPlanet.Init(_startShipCount, _color, this);
+        startPlanet.Init(_startShipCount, Color, this);
     }
 
-    private void FillFreePlanets()
+    private void FillFreePlanets(PlanetContainer shipContainer)
     {
-        for (int i = 0; i < _planetContainer.childCount; i++)
+        for (int i = 0; i < shipContainer.transform.childCount; i++)
         {
-            PlanetShip newPlanet = _planetContainer.GetChild(i).GetComponent<PlanetShip>();
+            PlanetShip newPlanet = shipContainer.transform.GetChild(i).GetComponent<PlanetShip>();
             FreePlanets.Add(newPlanet);
         }
     }
