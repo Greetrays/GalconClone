@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73ab29bf48eaad9489bae7388cc9573e, type: 3}
-  m_Name: Level2
+  m_Name: Level4
   m_EditorClassIdentifier: 
-  _planetCount: 10
-  _minDelayBetweemReleaseShip: 2
-  _maxDelayBetweemReleaseShip: 4
-  _numberComputerPlayers: 2
+  _planetCount: 20
+  _minDelayBetweemReleaseShip: 0.5
+  _maxDelayBetweemReleaseShip: 1.5
+  _numberComputerPlayers: 3

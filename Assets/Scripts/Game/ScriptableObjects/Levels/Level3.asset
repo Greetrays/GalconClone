@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Level3
   m_EditorClassIdentifier: 
   _planetCount: 15
+  _minDelayBetweemReleaseShip: 1.5
+  _maxDelayBetweemReleaseShip: 2.5
   _numberComputerPlayers: 3

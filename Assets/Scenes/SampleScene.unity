@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4310d4f337f445e4d9dd5d3bfae96dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelData: {fileID: 11400000, guid: 3175dc352e15dd444b47c9bca6905013, type: 2}
+  _levelData: {fileID: 11400000, guid: e4db676975df60a42aa30ca063d24c47, type: 2}
   _computerSpawner: {fileID: 237822372}
   _planetSpawner: {fileID: 324254656}
   _manPlayer: {fileID: 413442329}
@@ -871,7 +871,7 @@ GameObject:
   - component: {fileID: 1806833286}
   - component: {fileID: 1806833285}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

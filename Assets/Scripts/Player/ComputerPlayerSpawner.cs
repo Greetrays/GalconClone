@@ -11,19 +11,19 @@ public class ComputerPlayerSpawner : MonoBehaviour
 
     private List<Computer> _computers = new List<Computer>();
 
-    public void Restart(int numberComputers)
+    public void Restart(int numberComputers, float minDelayBetweemReleaseShip, float maxDelayBetweemReleaseShip)
     {
         _computers.Clear();
-        SpawmComputers(numberComputers);
+        SpawmComputers(numberComputers, minDelayBetweemReleaseShip, maxDelayBetweemReleaseShip);
     }
 
-    private void SpawmComputers(int numberComputers)
+    private void SpawmComputers(int numberComputers, float minDelayBetweemReleaseShip, float maxDelayBetweemReleaseShip)
     {
         for (int i = 0; i < numberComputers; i++)
         {
             Computer newComputer = Instantiate(_computerTemplate, _playersContainer.transform);
             _computers.Add(newComputer);
-            newComputer.InitComputer(_planetContainer, _shipContainer);
+            newComputer.InitComputer(_planetContainer, _shipContainer, minDelayBetweemReleaseShip, maxDelayBetweemReleaseShip);
         }
     }
 }

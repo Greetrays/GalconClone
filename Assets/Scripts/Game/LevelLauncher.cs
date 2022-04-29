@@ -17,7 +17,7 @@ public class LevelLauncher : MonoBehaviour
     private void LaunchNextLevel(LevelData level)
     {
         _planetSpawner.Restart(_levelData.PlanetCount);
-        _computerSpawner.Restart(_levelData.NumberComputerPlayers);
+        _computerSpawner.Restart(_levelData.NumberComputerPlayers, _levelData.MinDelayBetweemReleaseShip, _levelData.MaxDelayBetweemReleaseShip);
         _manPlayer.Restart();
     }
 }

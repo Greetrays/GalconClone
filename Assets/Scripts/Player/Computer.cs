@@ -2,9 +2,8 @@
 
 public class Computer : Player
 {
-    [SerializeField] private float _minDelayBetweemSelect;
-    [SerializeField] private float _maxDelayBetweemSelect;
-
+    private float _minDelayBetweemSelect;
+    private float _maxDelayBetweemSelect;
     private Color _color;
     private float _elepsedTime;
     private float _delayBetweemSelect;
@@ -36,10 +35,12 @@ public class Computer : Player
         }
     }
 
-    public void InitComputer(PlanetContainer planetContainer, ShipContainer shipContainer)
+    public void InitComputer(PlanetContainer planetContainer, ShipContainer shipContainer, float minDelayBetweemReleaseShip, float maxDelayBetweemReleaseShip)
     {
         _color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1);
         _shipContainer = shipContainer;
+        _maxDelayBetweemSelect = maxDelayBetweemReleaseShip;
+        _minDelayBetweemSelect = minDelayBetweemReleaseShip;
         Color = _color;
         RestartData(planetContainer);
     }
